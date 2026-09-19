@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .con1 {
+            background-color: rgb(8, 187, 247);
+            width: 100%;
+            max-width: 500px;
+            height: 580px;
+            text-align: center;
+            color: black;
+            margin: 20px;
+            padding: 40px;
+            border-radius: 30px;
+            font-weight: bolder;
+            border: 4px solid black;
+        }
+
+        .im {
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        label {
+            display: block;
+            font-size: x-large;
+            margin-top: 30px;
+            font-weight: 50;
+            color: black;
+        }
+
+        input {
+            font-size: larger;
+            padding: 7px;
+            margin-top: 3px;
+            width: 90%;
+            border-radius: 10px;
+            border: 3px solid black;
+        }
+
+        input::placeholder {
+            text-align: center;
+        }
+
+        input:focus {
+            border: 3px solid red;
+        }
+
+        input:hover {
+            margin-left: 3px;
+        }
+
+        .btn {
+            margin-top: 30px;
+        }
+
+        button {
+            font-size: x-large;
+            padding: 10px;
+            width: 60%;
+            border-radius: 20px;
+            border: 3px solid black;
+            font-weight: bolder;
+        }
+
+        button:hover {
+            width: 58%;
+        }
+
+        .sin p {
+            margin-top: 20px;
+            font-size: large;
+            color: black;
+            font-weight: 100;
+        }
+
+        p {
+            margin-top: 5px;
+            font-size: large;
+            color: black;
+            font-weight: 100;
+
+        }
+
+        a {
+            color: rgb(6, 6, 168);
+            margin-left: 3px;
+            text-decoration: none;
+        }
+
+        .re {
+            display: flex;
+            justify-content: flex-start;
+        }
+        span{
+            color: red;
+        }
+        .hea{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .h{
+            background-color: brown;
+            color: white;
+            font-size: medium;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hea">
+        <div class="h">
+            <h1>{{error}}</h1>
+        </div>
+    </div>
+    <div class="im">
+        <div class="con1">
+            <div class="head">
+                <h1>SIGN IN</h1>
+                <p>please enter your sign details</p>
+            </div>
+
+            <form action="/sign" method="post" id="in">
+                <label for="">NAME</label>
+                <input type="text" name="name" placeholder="enter your name" id="na">
+                <label for="">EMAIL</label>
+                <input type="email" name="email" placeholder="name@example.com" required id="em">
+                <label for="">PHONE</label>
+                <input type="number" name="phone" placeholder="enter your number" id="ph">
+                <span id="errph"></span>
+                <label for="">PASSWORD</label>
+                <input type="password" name="password" placeholder="enter your password" required id="pa">
+                <span id="errpa"></span>
+
+
+                <div class="btn">
+                    <button type="submit">SIGN IN</button>
+                </div>
+                <div class="sin">
+                    <p>Don't have an account? <a href="/log">Login</a></p>
+                </div>
+            </form>
+        </div>
+
+
+
+    </div>
+    <SCript>
+        document.getElementById("in").addEventListener("submit",function(e)
+    {
+        e.preventDefault();
+        var ph=document.getElementById("ph").value;
+        var pa=document.getElementById("pa").value;
+        console.log(ph,pa)
+
+        document.getElementById("errpa").innerHTML="";
+        var invalid=true;
+        if(pa.length<6){
+            document.getElementById("errpa").innerHTML="PASSWORD LENGTH HAS ABOVE 6 DIGIT";
+            alert("password  invalid");
+            invalid=false;
+        }
+        if(ph.length!=10){
+            document.getElementById("errph").innerHTML="PHONE NUMBER HAS 10 DIGIT";
+            alert("phone number invalid");
+            invalid=false;
+        }
+        if(invalid){
+            alert("sucessfully login");
+            this.submit();
+        }
+    })
+    </SCript>
+
+
+</body>
+
+</html>

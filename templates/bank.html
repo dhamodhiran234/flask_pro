@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bank.css') }}">
+</head>
+
+<body>
+    <div class="body">
+        <div class="side">
+            <div class="con1">
+                <ol>
+                    <li>
+                        <h2>BANK</h2>
+                    </li>
+                    <li><button id="btnhome" onclick="home()" type="submit">HOME</button></li>
+                    <li><button id="btnacccreate" onclick="accountcreate()" type="submit">ACCOUNT CREATE</button></li>
+                    <li><button id="btndeposite" onclick="deposite()" type="submit">DEPOSITE</button></li>
+                    <li><button id="btnwithdraw" onclick="withdraw()" type="submit">WITHDRAW</button></li>
+                    <li><button id="btnbalance" onclick="balance()" type="submit">BALANCE</button></li>
+                    <li><button id="btnaccdetail" onclick="accountdetails()" type="submit">ACCOUNT DETAILS</button></li>
+                    <li><button id="btnhistory" onclick="history()" type="submit">HISTORY</button></li>
+                </ol>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="rside">
+            <div class="hea">
+                <h1>WELCOME TO BANK</h1>
+            </div>
+
+
+            <div class="bottom">
+                <div id="home">
+                    <div class="ho">
+                        
+                        <h1>HELLO EVERYONE</h1>
+                        <h2>{{success}}</h2>
+                        <h3>{{error}}</h3>
+                    </div>
+
+                </div>
+                <div id="accountcreate">
+                    <div class="accp">
+                        <div class="acc">
+                            <form action="/newaccount" id="accsub" method="post">
+                                <h1> NEW ACCOUNT CREATE</h1>
+                                <label for="">NAME</label>
+                                <input type="text" name="name" placeholder="enter your name" id="name" required>
+                                <label for="">ADDRESS</label>
+                                <input type="text" name="address" placeholder=" enter your address" id="address"
+                                    required>
+                                <label for="">PHONE NUMBER</label>
+                                <input type="number" name="phone" placeholder="enter your phone no" id="phone" required>
+                                <label for="">AMOUNT</label>
+                                <input type="number" placeholder="enter your amount" required name="amt" id="amt">
+                                <div class="accbtn">
+                                    <button type="submit">CREATE ACCOUNT</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="deposite">
+                    <div class="dep">
+                        <form action="/deposite" id="depot" method="post">
+                            <h1>DEPOSITE</h1>
+                            <label for="">ACCOUNT NO</label>
+                            <input type="number" name="acc" required placeholder="enter your acc no" id="acc">
+                            <label for="">PIN</label>
+                            <input type="number" placeholder="enter your pin" required name="pin" id="pin">
+                            <label for="">AMOUNT</label>
+                            <input type="number" placeholder="enter your amount" required name="amt" id="amt">
+                            <div class="depbtn">
+                                <button type="submit">DEPOSITE AMOUNT</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div id="withdraw">
+                    <div class="with">
+                        <form action="/withdraw" id="withd" method="post">
+                            <h1>WITHDRAW</h1>
+                            <label for="">ACCOUNT NO</label>
+                            <input type="number" name="acc" required placeholder="enter your acc no" id="acc">
+                            <label for="">PIN</label>
+                            <input type="number" placeholder="enter your pin" required name="pin" id="pin">
+                            <label for="">AMOUNT</label>
+                            <input type="number" placeholder="enter your amount" required name="amt" id="amt">
+                            <div class="withbtn">
+                                <button type="submit">WITHDRAW AMOUNT</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div id="balance">
+                    <div class="balan">
+                        <form action="/balance" id="bala" method="post">
+                            <h1>BALANCE</h1>
+                            <label for="">ACCOUNT NO</label>
+                            <input type="number" name="acc" required placeholder="enter your acc no" id="acc">
+                            <label for="">PIN</label>
+                            <input type="number" placeholder="enter your pin" required name="pin" id="pin">
+                            <div class="balabtn">
+                                <button type="submit">CHECK BALANCE</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div id="accountdetails">
+                    <div class="accd">
+                        <form action="/accdet" id="accde" method="post">
+                            <h1>ACCOUNT DETAILS</h1>
+                            <label for="">NAME</label>
+                            <input type="text" name="name" required placeholder="enter your NAME" id="acc">
+                            <label for="">PHONE NO</label>
+                            <input type="text" name="phone" required placeholder="enter your NUMBER" id="acc">
+
+                            <div class="accdbtn">
+                                <button type="submit">SHOW DETAILS</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div id="history">
+                    <div class="hist">
+                        <form action="/history" id="histy" method="post">
+                            <h1>HISTORY</h1>
+                            <h2>Do You Want To Check History Click:</h2>
+                            <div class="histybtn">
+                                <button type="submit">CHECK HISTORY</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function home() {
+            document.getElementById("home").style.display = "block";
+            document.getElementById("accountcreate").style.display = "none";
+            document.getElementById("withdraw").style.display = "none";
+            document.getElementById("deposite").style.display = "none";
+            document.getElementById("balance").style.display = "none";
+            document.getElementById("accountdetails").style.display = "none";
+            document.getElementById("history").style.display = "none";
+        }
+        function accountcreate() {
+            document.getElementById("home").style.display = "none";
+            document.getElementById("accountcreate").style.display = "block";
+            document.getElementById("withdraw").style.display = "none";
+            document.getElementById("deposite").style.display = "none";
+            document.getElementById("balance").style.display = "none";
+            document.getElementById("accountdetails").style.display = "none";
+            document.getElementById("history").style.display = "none";
+        }
+        function withdraw() {
+            document.getElementById("home").style.display = "none";
+            document.getElementById("accountcreate").style.display = "none";
+            document.getElementById("withdraw").style.display = "block";
+            document.getElementById("deposite").style.display = "none";
+            document.getElementById("balance").style.display = "none";
+            document.getElementById("accountdetails").style.display = "none";
+            document.getElementById("history").style.display = "none";
+        }
+        function deposite() {
+            document.getElementById("home").style.display = "none";
+            document.getElementById("accountcreate").style.display = "none";
+            document.getElementById("withdraw").style.display = "none";
+            document.getElementById("deposite").style.display = "block";
+            document.getElementById("balance").style.display = "none";
+            document.getElementById("accountdetails").style.display = "none";
+            document.getElementById("history").style.display = "none";
+        }
+        function balance() {
+            document.getElementById("home").style.display = "none";
+            document.getElementById("accountcreate").style.display = "none";
+            document.getElementById("withdraw").style.display = "none";
+            document.getElementById("deposite").style.display = "none";
+            document.getElementById("balance").style.display = "block";
+            document.getElementById("accountdetails").style.display = "none";
+            document.getElementById("history").style.display = "none";
+        }
+        function accountdetails() {
+            document.getElementById("home").style.display = "none";
+            document.getElementById("accountcreate").style.display = "none";
+            document.getElementById("withdraw").style.display = "none";
+            document.getElementById("deposite").style.display = "none";
+            document.getElementById("balance").style.display = "none";
+            document.getElementById("accountdetails").style.display = "block";
+            document.getElementById("history").style.display = "none";
+        }
+        function history() {
+            document.getElementById("home").style.display = "none";
+            document.getElementById("accountcreate").style.display = "none";
+            document.getElementById("withdraw").style.display = "none";
+            document.getElementById("deposite").style.display = "none";
+            document.getElementById("balance").style.display = "none";
+            document.getElementById("accountdetails").style.display = "none";
+            document.getElementById("history").style.display = "block";
+        }
+
+    </script>
+</body>
+
+</html>

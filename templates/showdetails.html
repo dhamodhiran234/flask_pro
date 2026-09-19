@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .con {
+            margin:10px ;
+            display: flex;
+            justify-content: center;
+        }
+
+        .item {
+            background-color: black;
+            color: white;
+            padding: 30px;
+            margin-top: 60px;
+            border-radius: 20px;
+            max-width: 70%;
+        }
+        caption{
+            font-size: xx-large;
+            font-weight: bolder;
+            margin: 30px;
+        }
+        td{
+            padding: 20px;
+            margin: 10px;
+            font-size: x-large;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+        }
+        button{
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: larger;
+            font-weight: bolder;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="item">
+            <form action="/home">
+                <button type="submit">BACK</button>
+            </form>
+            <table border="3px">
+                {% for i in dataset %}
+                <caption>ACCOUNT DETAILS</caption>
+                <tr>
+                    <td>name: </td>
+                    <td>{{ i.0 }}</td>
+                </tr>
+                <tr>
+                    <td>address: </td>
+                    <td>{{ i.1 }}</td>
+                </tr>
+                <tr>
+                    <td>phone number: </td>
+                    <td>{{ i.2 }}</td>
+                </tr>
+                <tr>
+                    <td>account number: </td>
+                    <td>{{ i.3 }}</td>
+                </tr>
+                <tr>
+                    <td>pin: </td>
+                    <td>{{ i.4 }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    </h1>
+
+</body>
+
+</html>

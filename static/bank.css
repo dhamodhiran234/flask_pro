@@ -1,0 +1,510 @@
+ * {
+            margin: 0%;
+            padding: 0%;
+            
+        }
+
+        .body {
+            display: flex;
+        }
+
+        .side {
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            background-color: blue;
+            color: white;
+            padding: 20px;
+        }
+
+        ol {
+            list-style-type: none;
+        }
+
+        ol li {
+            margin-top: 32px;
+        }
+
+        ol li h2 {
+            font-size: xx-large;
+        }
+
+        ol li h2:hover {
+            color: black;
+            font-weight: bolder;
+        }
+
+        ol li button {
+            width: 95%;
+            margin: 5px;
+            padding: 10px;
+            font-size: x-large;
+            background-color: blue;
+            border: none;
+            color: white;
+        }
+
+        ol li button:hover {
+            background-color: white;
+            color: black;
+            font-weight: bolder;
+            transition: 0.1s;
+        }
+
+        @media (max-width:600px) {
+            ol li {
+                margin-top: 25px;
+            }
+
+            .side {
+                max-width: 200px;
+            }
+            .hea h1{
+                max-width:80% ;
+                width: 100%;
+            }
+            .accp {
+                margin-top: -70px;
+            }
+           
+        }
+        @media (max-width:1130px){
+             .hea h1{
+                max-width:80% ;
+                width: 100%;
+            }
+        }
+        .rside{
+            width: 90%;
+        }
+        .hea h1{
+            background-color: rgb(79, 158, 243);
+            text-align: center;
+            width: 95%;
+            display: block;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 20px;
+            color: white;
+        }
+
+        
+        #home {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ho{
+            background-color: rgb(53, 53, 223);
+            color: white;
+            max-width: 90%;
+            padding: 20px;
+            margin-top: 100px;
+            margin-left: 20px;
+            margin-right: 20px;
+            text-align: center;
+        }
+        .ho h3{
+            margin-top: 30px;
+            color: red;
+            font-size: x-large;
+        }
+        .ho h2{
+            margin-top: 30px;
+            color: lightgreen;
+            font-size: x-large;
+        }
+
+        #accountcreate {  
+            display: none;
+        }
+        .accp{
+            margin-top: 30px;
+            display:flex;
+            justify-content: center;
+            align-items: center;  
+        }
+        .acc{
+            border-radius: 20px;
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            background-color: rgb(11, 167, 246);
+            color: black;
+            margin: 10px;
+        }
+        #accsub{
+            width: 100%;
+        }
+        #accsub h1{
+            text-align: center;
+        }
+        #accsub label{
+            display: block;
+            margin-top: 20px;
+            font-size:x-large ;
+        }
+        #accsub input{
+            width: 100%;
+            height: 35px;
+            margin-top: 15px;
+            border-radius: 10px;
+            border:2px solid black;
+            font-size: x-large;
+            padding: 5px;
+
+        }
+        #accsub input::placeholder{
+            text-align: center;
+            font-size: x-large;
+        }
+        #accsub .accbtn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap:wrap;
+        }
+        #accsub .accbtn button{
+            padding: 10px;
+            font-size: medium;
+            width: 60%;
+            margin-top: 25px;
+            border-radius: 10px;
+            border:2px solid black ;
+            font-weight: bolder;
+        }
+        @media (max-width:800px){
+             #accsub .accbtn button{
+                max-width: 100%;
+                font-size: medium;
+            }
+        }
+
+
+
+        /* deposite */
+
+        #deposite {
+            width: 100%;
+            display: none;
+        }
+        #deposite .dep{
+            margin-top: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .dep #depot{
+           
+            background-color: rgb(12, 178, 249);
+            color: black;
+            width: 100%;
+            max-width: 700px;
+            margin: 10px;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        #depot h1{
+            text-align: center;
+        }
+        #depot label{
+            display: block;
+            font-size: x-large;
+            margin-top: 20px;
+
+        }
+        #depot input::placeholder{
+            text-align: center;
+            font-size: x-large;
+        }
+        #depot input{
+            border: 2px solid black;
+            width:90%;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: larger;
+            border-radius: 10px;
+        }
+        #depot .depbtn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #depot .depbtn button{
+            padding: 20px;
+            width: 50%;
+            font-size: larger;
+            font-weight: bolder;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+          @media (max-width:800px){
+             #depot .depbtn button{
+                width: 100%;
+                font-size: larger;
+            }
+        }
+
+        /* withdarw */
+
+
+        #withdraw {
+            width: 100%;
+            display: none;
+        }
+        #withdraw .with{
+            margin-top: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .with #withd{
+           
+            background-color: rgb(12, 178, 249);
+            color: black;
+            width: 100%;
+            max-width: 700px;
+            margin: 10px;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        #withd h1{
+            text-align: center;
+        }
+        #withd label{
+            display: block;
+            font-size: x-large;
+            margin-top: 20px;
+
+        }
+        #withd input::placeholder{
+            text-align: center;
+            font-size: x-large;
+        }
+        #withd input{
+            border: 2px solid black;
+            width:90%;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: larger;
+            border-radius: 10px;
+        }
+        #withd .withbtn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #withd .withbtn button{
+            padding: 20px;
+            width: 50%;
+            font-size: larger;
+            font-weight: bolder;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+          @media (max-width:800px){
+             #withd .withbtn button{
+                width: 100%;
+                font-size: larger;
+            }
+        }
+
+
+        /* balance */
+
+        #balance {
+            width: 100%;
+            display: none;
+        }
+        #balance .balan{
+            margin-top: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .balan #bala{
+           
+            background-color: rgb(12, 178, 249);
+            color: black;
+            width: 100%;
+            max-width: 700px;
+            margin: 10px;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        #bala h1{
+            text-align: center;
+        }
+        #bala label{
+            display: block;
+            font-size: x-large;
+            margin-top: 20px;
+
+        }
+        #bala input::placeholder{
+            text-align: center;
+            font-size: x-large;
+        }
+        #bala input{
+            border: 2px solid black;
+            width:90%;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: larger;
+            border-radius: 10px;
+        }
+        #bala .balabtn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #bala .balabtn button{
+            padding: 20px;
+            width: 50%;
+            font-size: larger;
+            font-weight: bolder;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+          @media (max-width:800px){
+             #bala .balabtn button{
+                width: 100%;
+                font-size: larger;
+            }
+        }
+
+        /* accountdetails */
+
+
+        #accountdetails {
+            width: 100%;
+            display: none;
+        }
+        #accountdetails .accd{
+            margin-top: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .accd #accde{
+           
+            background-color: rgb(12, 178, 249);
+            color: black;
+            width: 100%;
+            max-width: 700px;
+            margin: 10px;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        #accde h1{
+            text-align: center;
+        }
+        #accde label{
+            display: block;
+            font-size: x-large;
+            margin-top: 20px;
+
+        }
+        #accde input::placeholder{
+            text-align: center;
+            font-size: x-large;
+        }
+        #accde input{
+            border: 2px solid black;
+            width:90%;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: larger;
+            border-radius: 10px;
+        }
+        #accde .accdbtn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #accde .accdbtn button{
+            padding: 20px;
+            width: 50%;
+            font-size: larger;
+            font-weight: bolder;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+          @media (max-width:800px){
+             #accde .accdbtn button{
+                width: 100%;
+                font-size: larger;
+            }
+        }
+
+        /* balance */
+
+        #history {
+            width: 100%;
+            display: none;
+        }
+        #history .hist{
+            margin-top: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .hist #histy{
+           
+            background-color: rgb(12, 178, 249);
+            color: black;
+            width: 100%;
+            max-width: 700px;
+            margin: 10px;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        #histy h1,h2{
+            text-align: center;
+        }
+        #histy h2{
+            margin-top: 20px;
+        }
+    
+        #histy .histybtn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #histy .histybtn button{
+            padding: 20px;
+            width: 50%;
+            font-size: larger;
+            font-weight: bolder;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+          @media (max-width:800px){
+             #histy .histybtn button{
+                width: 100%;
+                font-size: larger;
+            }
+        }
+
+
+
+
+
+        
+
+
+
+
+
+        
